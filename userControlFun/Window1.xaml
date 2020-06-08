@@ -1,0 +1,27 @@
+﻿<Window x:Class="UserControlFun.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:UserControlFun"
+    Title="Window1" Height="300" Width="300">
+    <Grid>
+            
+        <StackPanel>
+            <local:RangeSlider x:Name="slider" 
+                               LostFocus="slider_LostFocus"
+                               RangeSliderMinValueChanged="slider_RangeSliderMinValueChanged"
+                               RangeSliderMaxValueChanged="slider_RangeSliderMaxValueChanged"
+                               Margin="10" 
+                               LowerValue="30"
+                               UpperValue="70"
+                               Minimum="0"
+                               Maximum="200"
+                               />
+
+            <TextBox  Name="minTextBox"   Margin="10,1,10,1" Text="30"/>
+            <!--<TextBox Text="{Binding ElementName=slider, Path=LowerValue}" Margin="10,1,10,1" />
+            <TextBox Text="{Binding ElementName=slider, Path=UpperValue}" Margin="10,1,10,1" />-->
+            <TextBox  Name="maxTextBox"  Margin="10,1,10,1" Text="200" />
+          
+        </StackPanel>
+    </Grid>
+</Window>
