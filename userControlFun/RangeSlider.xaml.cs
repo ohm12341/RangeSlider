@@ -150,5 +150,23 @@ namespace UserControlFun
             RangeSliderMinValueChanged?.Invoke(LowerValue, EventArgs.Empty);
             RangeSliderMaxValueChanged?.Invoke(UpperValue, EventArgs.Empty);
         }
+
+        private void LowerSlider_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                RangeSliderMinValueChanged?.Invoke( (sender as TextBox)?.Text, EventArgs.Empty);
+                (sender as TextBox)?.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next) { });
+            }
+        }
+
+        private void TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                RangeSliderMinValueChanged?.Invoke((sender as TextBox)?.Text, EventArgs.Empty);
+                (sender as TextBox)?.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next) { });
+            }
+        }
     }
 }

@@ -281,7 +281,7 @@
         </Grid.ColumnDefinitions>
 
         <TextBox BorderThickness="0" Grid.Column="0"  IsReadOnly="False" Text="{Binding ElementName=root, Path=LowerValue, Mode=TwoWay}" 
-                 FocusManager.LostFocus="LowerValueTextBox_LostFocus"
+                 FocusManager.LostFocus="LowerValueTextBox_LostFocus" KeyDown="LowerSlider_KeyDown"
                  MouseDoubleClick="TextBox_MouseDoubleClick" 
                  Margin="10,1,10,1" />
         <Border x:Name="border" Grid.Column="1"  BorderThickness="0,2,0,0"   BorderBrush="Gray" VerticalAlignment="Center" 
@@ -290,7 +290,7 @@
         <Slider x:Name="LowerSlider" TickFrequency="1"   Grid.Column="1"
                 IsSnapToTickEnabled="True" Template="{StaticResource simpleSlider}"
                 PreviewKeyUp="LowerSlider_PreviewKeyUp"
-                IsSelectionRangeEnabled="True"
+                IsSelectionRangeEnabled="True" 
                 Minimum="{Binding ElementName=root, Path=Minimum}"
                 Maximum="{Binding ElementName=root, Path=Maximum}"
                 MouseLeftButtonUp="LowerSlider_MouseLeftButtonUp"
@@ -321,7 +321,7 @@
 
 
         <TextBox BorderThickness="0" Grid.Column="2" IsReadOnly="False" 
-                 MouseDoubleClick="TextBox_MouseDoubleClick"  
+                 MouseDoubleClick="TextBox_MouseDoubleClick"   KeyDown="TextBox_KeyDown"
                  FocusManager.LostFocus="HigherValueTextBox_LostFocus" 
                  Text="{Binding ElementName=root, Path=UpperValue, Mode=TwoWay}"
                  Margin="10,1,10,1" />
